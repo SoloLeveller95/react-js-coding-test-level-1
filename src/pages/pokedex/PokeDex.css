@@ -1,0 +1,191 @@
+.pokedex {
+	text-align: center;
+}
+
+.pokedex__header {
+	background-color: white;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	color: #282c34;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.pokedex__loader {
+	background-color: white;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #282c34;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.app-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 3rem 0.5rem;
+}
+.pokedex__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.pokodex__allContainer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.thumb__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1.5rem 0;
+	margin: 0.3rem;
+	border: 1px solid #efefef;
+	border-radius: 0.2rem;
+	/* min-width: 160px; */
+	width: 250px;
+	text-align: center;
+	/* flex-basis: 20%; */
+	box-shadow: 0 3px 15px rgba(0, 0, 0, 0.089);
+	cursor: pointer;
+}
+
+.thumb__container .number {
+	border-radius: 1rem;
+	padding: 0.2rem 0.4rem;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+.thumb__container img {
+	width: 120px;
+	height: 120px;
+}
+.thumb__container small {
+	text-transform: capitalize;
+}
+.thumb__wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.paginationBttns {
+	margin: 50px;
+	/* width: 50px; */
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	width: 100px;
+	height: 100px;
+}
+
+.paginationBttns a {
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	margin: 8px 20px;
+
+	color: #282c34;
+	cursor: pointer;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	text-decoration: none;
+}
+
+.paginationActive a {
+	color: white;
+	background-color: #282c34;
+}
+
+.paginationDisabled a {
+	color: grey;
+	background-color: grey;
+}
+
+.modal__overlay {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	backdrop-filter: blur(7px);
+	z-index: 5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal__content {
+	width: 1000px;
+	height: auto;
+	z-index: 10;
+	background-color: white;
+	padding: 20px 0 20px 45px;
+	border-radius: 25px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.modal__upper {
+	display: flex;
+	position: relative;
+	margin-bottom: 50px;
+}
+.modal__upper img {
+	flex: 0.3;
+	height: 250px;
+}
+.modal__closeButton {
+	background: transparent;
+	border-color: transparent;
+	color: #282c34;
+	position: absolute;
+	top: -20px;
+	right: 1rem;
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+.modal__lower {
+	display: flex;
+}
+.modal__baseStats {
+	flex: 0.6;
+	padding-left: 20px;
+}
+
+.modal__button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+}
+
+.modal__link {
+	border-radius: 25px;
+	padding: 10px 15px;
+	color: #282c34;
+	background-color: white;
+	transition: 0.5s;
+	border-color: transparent;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	text-decoration: none;
+	list-style: none;
+}
+.modal__link:hover {
+	color: white;
+	background-color: #282c34;
+}

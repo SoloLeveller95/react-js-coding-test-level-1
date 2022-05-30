@@ -1,0 +1,61 @@
+.search__container {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	border: 1px solid #efefef;
+	border-radius: 0.2rem;
+	box-shadow: 0 3px 15px rgba(0, 0, 0, 0.089);
+	padding: 30px;
+	height: 350px;
+	flex-direction: row;
+}
+
+.search__media {
+	flex: 0.3;
+}
+
+.search__media img {
+	width: 100%;
+}
+
+.search__content {
+	flex: 0.7;
+	margin-left: 100px;
+	display: flex;
+	flex-direction: row;
+}
+
+.search__baseStats {
+	flex: 0.8;
+}
+
+.search__abilities__types {
+	display: flex;
+	flex-direction: column;
+	flex: 0.2;
+	padding-left: 100px;
+}
+.search__abilities {
+	margin-bottom: 30px;
+}
+
+.search__abilities div {
+	padding: 5px 0;
+}
+
+.search__types div {
+	padding: 5px 0;
+}
+
+.error,
+.loading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+}
+.error h1,
+.loading h1 {
+	font-size: 5rem;
+}
