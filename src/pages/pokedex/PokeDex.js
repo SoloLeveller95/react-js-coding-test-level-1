@@ -52,7 +52,7 @@ function PokeDex() {
 		getAllPokemons();
 	}, []);
 
-	// Sort the pokemon data that we (Ascending or descending)
+	// Sort the pokemon data that we get by clicking a button (Ascending or descending)
 	const handleSortAscending = () => {
 		const dataSorted = pokemons.sort((a, b) => {
 			return a.id - b.id;
