@@ -5,6 +5,12 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 import { FaTimes } from "react-icons/fa";
+import {
+	FcAlphabeticalSortingAz,
+	FcAlphabeticalSortingZa,
+	FcNumericalSorting12,
+	FcNumericalSorting21,
+} from "react-icons/fc";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PokemonThumb from "../../components/PokemonThumb";
@@ -46,8 +52,54 @@ function PokeDex() {
 		getAllPokemons();
 	}, []);
 
-	// Sort the pokemon data that we get according to the ID (Ascending)
-	pokemons.sort((a, b) => a.id - b.id);
+	// Sort the pokemon data that we (Ascending or descending)
+	const handleSortAscending = () => {
+		const dataSorted = pokemons.sort((a, b) => {
+			return a.id - b.id;
+		});
+
+		setPokemons([...pokemons], dataSorted);
+	};
+
+	const handleSortDescending = () => {
+		const dataSorted = pokemons.sort((a, b) => {
+			return b.id - a.id;
+		});
+
+		setPokemons([...pokemons], dataSorted);
+	};
+
+	const handleSortAscByAlph = () => {
+		const sorting = (a, b) => {
+			if (a.name < b.name) {
+				return -1;
+			}
+			if (a.name > b.name) {
+				return 1;
+			}
+			return 0;
+		};
+
+		const dataSorted = pokemons.sort(sorting);
+
+		setPokemons([...pokemons], dataSorted);
+	};
+
+	const handleSortDescByAlph = () => {
+		const sorting = (a, b) => {
+			if (a.name > b.name) {
+				return -1;
+			}
+			if (a.name < b.name) {
+				return 1;
+			}
+			return 0;
+		};
+
+		const dataSorted = pokemons.sort(sorting);
+
+		setPokemons([...pokemons], dataSorted);
+	};
 
 	//Function to go into React paginate component as a prop (whether ascending or descending)
 	const changePage = ({ selected }) => {
@@ -81,6 +133,24 @@ function PokeDex() {
 				) : (
 					<div className="pokedex__container">
 						<Navbar />
+						<div className="pokedex__sortingButton">
+							<div className="pokedex__sortingByNumber">
+								<button onClick={() => handleSortAscending()}>
+									<FcNumericalSorting12 />
+								</button>
+								<button onClick={() => handleSortDescending()}>
+									<FcNumericalSorting21 />
+								</button>
+							</div>
+							<div className="pokedex__sortingByAlph">
+								<button onClick={() => handleSortAscByAlph()}>
+									<FcAlphabeticalSortingAz />
+								</button>
+								<button onClick={() => handleSortDescByAlph()}>
+									<FcAlphabeticalSortingZa />
+								</button>
+							</div>
+						</div>
 						<div className="pokodex__allContainer">
 							{pokemons
 								.slice(pagesVisited, pagesVisited + pokemonPerPage)
