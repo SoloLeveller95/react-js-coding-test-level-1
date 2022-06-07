@@ -30,7 +30,7 @@
 	display: flex;
 	width: 80%;
 	margin: 0 auto 25px auto;
-	justify-content: end;
+	justify-content: flex-end;
 	align-items: center;
 }
 .pokedex__sortingByNumber,

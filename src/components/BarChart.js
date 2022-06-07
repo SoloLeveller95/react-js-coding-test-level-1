@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
-const BarChart = ({ prop }) => {
-	console.log(prop);
-	const [pokemonChartDetail, setPokemonChartDetail] = useState(prop[0]);
-
+const BarChart = ({ prop, getBarImage }) => {
+	const ref = useRef();
 	const statsArray = (prop) => {
 		const result = prop.stats.map((stat) => stat.stat.name);
 		return result;
@@ -19,10 +17,10 @@ const BarChart = ({ prop }) => {
 
 	const number = statsNumber(prop[0]);
 
-	console.log(pokemonChartDetail);
 	return (
 		<div>
 			<Bar
+				ref={ref}
 				data={{
 					labels: stats,
 					datasets: [
@@ -62,6 +60,12 @@ const BarChart = ({ prop }) => {
 					legend: {
 						labels: {
 							fontSize: 25,
+						},
+					},
+					animation: {
+						onComplete: function () {
+							const imageData = ref.current.toBase64Image();
+							getBarImage(imageData);
 						},
 					},
 				}}

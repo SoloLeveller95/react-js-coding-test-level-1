@@ -27,6 +27,7 @@ function PokeDex() {
 	const pokemonPerPage = 30;
 	const pagesVisited = pageNumber * pokemonPerPage;
 	const pageCount = Math.ceil(pokemons.length / pokemonPerPage);
+	const [barImage, setBarImage] = useState("");
 
 	// Get all of each pokemon data from the API and store it inside pokemon variable/state
 	const getAllPokemons = () => {
@@ -65,7 +66,6 @@ function PokeDex() {
 		const dataSorted = pokemons.sort((a, b) => {
 			return b.id - a.id;
 		});
-
 		setPokemons([...pokemons], dataSorted);
 	};
 
@@ -81,7 +81,6 @@ function PokeDex() {
 		};
 
 		const dataSorted = pokemons.sort(sorting);
-
 		setPokemons([...pokemons], dataSorted);
 	};
 
@@ -115,6 +114,11 @@ function PokeDex() {
 	//Function to close the modal
 	const closeModal = () => {
 		setPokemonDetail(null);
+	};
+
+	// Get bar image
+	const getBarImage = (barImage) => {
+		setBarImage(barImage);
 	};
 
 	return (
@@ -185,7 +189,7 @@ function PokeDex() {
 						<div className="modal__upper">
 							<img
 								src={pokemonDetail[0].sprites.other.dream_world.front_default}
-								alt=""
+								alt="pokemon"
 							/>
 							<div className="modal__baseStats">
 								<h4>Base stats</h4>
@@ -206,10 +210,12 @@ function PokeDex() {
 							</button>
 						</div>
 						<div className="modal__lower">
-							<BarChart prop={pokemonDetail} />
+							<BarChart prop={pokemonDetail} getBarImage={getBarImage} />
 							<div className="modal__button">
 								<PDFDownloadLink
-									document={<PDFFile prop={pokemonDetail} />}
+									document={
+										<PDFFile prop={pokemonDetail} barImage={barImage} />
+									}
 									fileName="pokemonData.pdf"
 									className="modal__link"
 								>

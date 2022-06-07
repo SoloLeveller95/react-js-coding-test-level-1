@@ -7,8 +7,6 @@ import {
 	StyleSheet,
 	Font,
 } from "@react-pdf/renderer";
-import BarChart from "./BarChart";
-import { Chart as ChartJS } from "chart.js/auto";
 
 Font.register({
 	family: "Oswald",
@@ -52,9 +50,6 @@ const styles = StyleSheet.create({
 		marginTop: 0,
 		marginBottom: 0,
 		marginHorizontal: 100,
-
-		// width: 500,
-		// height: 250,
 	},
 	header: {
 		fontSize: 12,
@@ -78,9 +73,7 @@ const styles = StyleSheet.create({
 	},
 });
 
-const PDFFile = ({ prop }) => {
-	console.log(prop);
-	// console.log(chart.current.toBase64Image());
+const PDFFile = ({ prop, barImage }) => {
 	return (
 		<Document>
 			<Page style={styles.body}>
@@ -99,6 +92,7 @@ const PDFFile = ({ prop }) => {
 						(stat) => stat.stat.name + " => " + stat.base_stat + " || "
 					)}
 				</Text>
+				<Image style={styles.image} src={barImage} />
 				{/* <Text style={styles.text}>
 						{prop[0].stats.map((stat) => stat.base_stat)}
 					</Text> */}
