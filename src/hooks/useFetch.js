@@ -5,9 +5,9 @@ function useFetch(url) {
 	const [data, setData] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
-	const controller = new AbortController();
 
 	useEffect(() => {
+		const controller = new AbortController();
 		setIsLoading(true);
 		setData(null);
 

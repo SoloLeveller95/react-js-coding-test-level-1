@@ -27,7 +27,7 @@ function PokeDex() {
 	const pokemonPerPage = 30;
 	const pagesVisited = pageNumber * pokemonPerPage;
 	const pageCount = Math.ceil(pokemons.length / pokemonPerPage);
-	const [barImage, setBarImage] = useState("");
+	const [barImage, setBarImage] = useState(null);
 
 	// Get all of each pokemon data from the API and store it inside pokemon variable/state
 	const getAllPokemons = () => {

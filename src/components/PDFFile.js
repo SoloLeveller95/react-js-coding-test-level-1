@@ -92,18 +92,7 @@ const PDFFile = ({ prop, barImage }) => {
 						(stat) => stat.stat.name + " => " + stat.base_stat + " || "
 					)}
 				</Text>
-				<Image style={styles.image} src={barImage} />
-				{/* <Text style={styles.text}>
-						{prop[0].stats.map((stat) => stat.base_stat)}
-					</Text> */}
-
-				{/* Bawah ni code dia */}
-				{/* <Svg
-					style={styles.image}
-					src={prop[0].sprites.other.dream_world.front_default}
-				/> */}
-				{/* Below direct Image URL from API pon x leh nak muncul dalam pdf tapi dekat homapage sume gambar tu load je */}
-				{/* <BarChart prop={prop} /> */}
+				<Image style={styles.image} source={barImage} />
 
 				<Text style={styles.subtitle}>Data collected from PokeAPI</Text>
 
