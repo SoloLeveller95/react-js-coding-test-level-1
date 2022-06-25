@@ -1,7 +1,5 @@
 # Please read
 
-I'm so sorry as I forgot to create a separate branch for 1) form validation and 2) pokedex. Unfortunately, i have pushed all the code to the main branch. Nonetheless, You can the form validation test in the Home component under the pages folder and you can also find the Pokedex under the same pages folder. Sorry for the inconvenience 🙏🙏.
-
 Please checkout this link for the app demo : https://fathullah-pokedex.netlify.app
 
 ## Getting Started with Create React App
