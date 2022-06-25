@@ -180,7 +180,7 @@
 .modal__upper {
 	display: flex;
 	position: relative;
-	margin-bottom: 50px;
+	margin-bottom: 49px;
 }
 .modal__upper img {
 	flex: 0.3;
